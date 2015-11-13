@@ -1,0 +1,7 @@
+## run: pip install -U -r requirements.txt
+#Pillow
+#lxml
+#cssselect
+jieba
+beautifulsoup
+nltk
