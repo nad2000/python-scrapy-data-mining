@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import requests
 from BeautifulSoup import BeautifulSoup
-import nltk 
+import nltk
 import sys
 import csv
 
@@ -13,11 +13,11 @@ def retrieve(url,prod_id=None):
     from it the product name and its description
     """
     res = requests.get(url, verify=False)
-    
+
     soup = BeautifulSoup(res.text)
     title = soup.find("h1", attrs={"class": "product-detailed__name"}).text
     description = soup.find("div", id=lambda v: v and v.startswith("product_desc_")).text
-    
+
     if title and description:
         print "{0}\t{1}\t{2}\t{3}".format(url, title, description, prod_id)
 
@@ -34,5 +34,5 @@ else:
         try:
             retrieve(url, prod_id)
         except Exception as e:
-            sys.stderr.write(e)
+            #sys.stderr.write(e)
             pass
