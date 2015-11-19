@@ -13,6 +13,9 @@ def retrieve(url,prod_id=None):
     from it the product name and its description
     """
     res = requests.get(url, verify=False)
+    # out of stock:
+    if "Stok Habis" in res.text:
+        return
 
     soup = BeautifulSoup(res.text)
     title = soup.find("h1", attrs={"class": "product-detailed__name"}).text
@@ -34,5 +37,5 @@ else:
         try:
             retrieve(url, prod_id)
         except Exception as e:
-            #sys.stderr.write(e)
+            print >>sys.stderr, e
             pass
