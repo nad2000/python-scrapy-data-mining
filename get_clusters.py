@@ -25,7 +25,7 @@ sys.path.append(os.path.join(os.environ["HOME"], "site-aggregation"))
 
 import crawler.settings
 # set MySQL DB root user password here or in site-aggregation private settings:
-crawler.settings.MYSQL_PASSWORD = "123"
+crawler.settings.MYSQL_PASSWORD = os.environ.get("MYSQL_PWD", crawler.settings.MYSQL_PASSWORD)
 
 from crawler import db
 from crawler.db import Product
