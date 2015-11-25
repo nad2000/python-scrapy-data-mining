@@ -23,15 +23,7 @@ echo 'Setting up virtualenv...'
 
 virtualenv venv
 . venv/bin/activate
-pip install -r "requirements.txt"
-pip install googleads
-pip install selenium
-pip install peewee
-pip install beautifulsoup4
-
-# for affiliate program
-pip install pinax-referrals
-pip install django --upgrade
+pip install -U -r requirements.txt
 
 deactivate
 

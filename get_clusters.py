@@ -113,8 +113,10 @@ def category_clusters(categories):
     return [(c, get_clusters(c)) for c in categories]
 
 shuffle(categories)
-pool = multiprocessing.Pool(processes=4)
-clusters = pool.map(category_clusters, utils.chunks(categories, 4))
+
+process_num = multiprocessing.cpu_count()
+pool = multiprocessing.Pool(processes=process_num)
+clusters = pool.map(category_clusters, utils.chunks(categories, process_num))
 
 clusters = filter(lambda c: c[1], sum(clusters, []))
 

@@ -58,3 +58,18 @@ target/
 
 *.tsv
 *.csv
+
+.ipynb_checkpoints/
+.spyderproject
+*.pkl
+Untitled.ipynb
+bukalapak.crt
+db.db
+db.sql
+*-Copy1.ipynb
+ipython_log.py
+tokes.txt
+urls-*
+validation.ipynb
+venv/
+
