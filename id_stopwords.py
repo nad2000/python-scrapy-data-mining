@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+# vim: ai ts=4 sts=4 et sw=4 ft=python
+
+
 # from appendix D of: A Study of Stemming Effects on Information
 # Retrieval in Bahasa Indonesia
 

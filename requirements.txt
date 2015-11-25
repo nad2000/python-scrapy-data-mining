@@ -1,7 +1,12 @@
 ## run: pip install -U -r requirements.txt
-#Pillow
-#lxml
-#cssselect
-jieba
-beautifulsoup
-nltk
+autopep8>=1.2.1
+dill>=0.2.4
+lxml>=3.5.0
+MySQL-python>=1.2.5
+nltk>=3.1
+numpy>=1.10.1
+scikit-learn>=0.17
+scipy>=0.16.1
+Scrapy>=1.0.1
+urllib3>=1.12
+user-agent>=0.1.0
