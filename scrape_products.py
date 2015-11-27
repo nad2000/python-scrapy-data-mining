@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 import requests
 from BeautifulSoup import BeautifulSoup
-import nltk
 import sys
 import csv
 
 requests.packages.urllib3.disable_warnings()
 
-def retrieve(url,prod_id=None):
+
+def retrieve(url, prod_id=None):
     """
     Retrievs a single product page and extacts
     from it the product name and its description
@@ -19,7 +19,8 @@ def retrieve(url,prod_id=None):
 
     soup = BeautifulSoup(res.text)
     title = soup.find("h1", attrs={"class": "product-detailed__name"}).text
-    description = soup.find("div", id=lambda v: v and v.startswith("product_desc_")).text
+    description = soup.find(
+        "div", id=lambda v: v and v.startswith("product_desc_")).text
 
     if title and description:
         print "{0}\t{1}\t{2}\t{3}".format(url, title, description, prod_id)
@@ -38,4 +39,3 @@ else:
             retrieve(url, prod_id)
         except Exception as e:
             print >>sys.stderr, e
-            pass
