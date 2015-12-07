@@ -7,7 +7,8 @@ echo 'Updating system...'
 
 echo 'Installing dependencies...'
 
-sudo apt-get install -y mysql-server libmysqlclient-dev
+sudo apt-get install -y mysql-server 
+sudo apt-get install -y libmysqlclient-dev
 sudo apt-get install -y build-essential
 sudo apt-get install -y python-dev
 sudo apt-get install -y libssl-dev
